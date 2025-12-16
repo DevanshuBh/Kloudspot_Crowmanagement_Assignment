@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Kloudspot specific colors */
+.bg-kloudspot-teal {
+  background-color: #338a83;
+  /* Matching the sidebar teal */
+}
+
+.text-kloudspot-teal {
+  color: #338a83;
+}
+
+.border-kloudspot-teal {
+  border-color: #338a83;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #338a83;
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 14px;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: white;
+}
+
+.sidebar-item.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border-left-color: #ffffff;
+  /* White indicator strip */
+}
+
+/* Card styles */
+.dashboard-card {
+  background: white;
+  border-radius: 4px;
+  /* Flatter look */
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef0f2;
+}
+
+/* Table styles */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.custom-table th {
+  text-align: left;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #64748b;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.custom-table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.custom-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+}
+
+.page-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: #338a83;
+  color: #338a83;
+}
+
+.page-btn.active {
+  background-color: #338a83;
+  border-color: #338a83;
+  color: white;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Live Badge for Chart */
+.chart-live-badge {
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 2px;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+}
+
+/* Avatar Colors */
+.avatar-blue {
+  background-color: #3b82f6;
+}
+
+.avatar-green {
+  background-color: #22c55e;
+}
+
+.avatar-pink {
+  background-color: #ec4899;
+}
+
+.avatar-orange {
+  background-color: #f97316;
+}
