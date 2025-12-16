@@ -14,13 +14,26 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+        setError('');
+
+        // Demo Mode Check (for Vercel/Offline usage)
+        const isDemoId = email.trim() === 'parking_solutions';
+
         try {
             const res = await axios.post('http://localhost:8080/api/auth/login', { email });
             if (res.data.token) {
+                localStorage.setItem('token', res.data.token);
                 navigate('/dashboard');
             }
         } catch (err) {
-            setError('Invalid ID. Try "parking_solutions"');
+            // Fallback: If backend is down but ID is correct, allow access (Demo Mode)
+            if (isDemoId) {
+                console.log('Backend unreachable. Entering Demo Mode.');
+                localStorage.setItem('token', 'demo-token');
+                navigate('/dashboard');
+            } else {
+                setError('Invalid ID. Try "parking_solutions"');
+            }
         } finally {
             setIsLoading(false);
         }
